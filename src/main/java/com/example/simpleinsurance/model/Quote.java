@@ -3,6 +3,9 @@ package com.example.simpleinsurance.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.math.BigDecimal;
+
+
 @Entity
 @Data
 public class Quote {
@@ -15,8 +18,8 @@ public class Quote {
 
     private CoverageType type;
 
-    private Long price;
+    private BigDecimal price;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Provider provider;
 }

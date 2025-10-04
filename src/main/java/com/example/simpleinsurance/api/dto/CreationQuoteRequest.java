@@ -3,14 +3,16 @@ package com.example.simpleinsurance.api.dto;
 import com.example.simpleinsurance.model.CoverageType;
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 @Data
 public class CreationQuoteRequest {
 
     private String name;
 
-    private CoverageType type;
+    private CoverageTypeDto type;
 
-    private Long price;
+    private BigDecimal price;
 
     private ProviderRequest provider;
 }

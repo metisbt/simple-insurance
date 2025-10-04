@@ -10,7 +10,7 @@ public class QuoteResponse {
 
     private Long id;
     private String name;
-    private CoverageType type;
+    private CoverageTypeDto type;
     private ProviderResponse provider;
     private BigDecimal price;
 }

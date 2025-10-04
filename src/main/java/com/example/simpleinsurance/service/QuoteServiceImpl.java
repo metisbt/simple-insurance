@@ -50,7 +50,7 @@ public class QuoteServiceImpl implements QuoteService {
 
         if (providerExists == null) {
             providerExists = providerMapper.toEntity(request.getProvider());
-            providerDao.save(providerExists);
+            providerExists = providerDao.save(providerExists);
         }
         Quote quote = quoteMapper.toEntity(request);
         quote.setProvider(providerExists);

@@ -2,8 +2,11 @@ package com.example.simpleinsurance.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -22,4 +25,10 @@ public class Quote {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Provider provider;
+
+    @CreatedDate
+    private LocalDateTime creationDate;
+
+    @LastModifiedBy
+    private LocalDateTime lastModificationDate;
 }

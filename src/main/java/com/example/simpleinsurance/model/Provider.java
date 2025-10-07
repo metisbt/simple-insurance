@@ -1,17 +1,28 @@
 package com.example.simpleinsurance.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Data
+@EntityListeners(AuditingEntityListener.class)
 public class Provider {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
+
     private String name;
+
+    @CreatedDate
+    private LocalDateTime creationDate;
+
+    @LastModifiedDate
+    private LocalDateTime lastModificationDate;
 }

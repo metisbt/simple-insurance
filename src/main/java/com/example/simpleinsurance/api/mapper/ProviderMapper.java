@@ -10,6 +10,5 @@ public interface ProviderMapper {
 
     ProviderResponse toResponse(Provider provider);
 
-    @Mapping(source = "name", target = "name")
     Provider toEntity(ProviderRequest providerRequest);
 }

@@ -9,16 +9,8 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring", uses = {ProviderMapper.class})
 public interface QuoteMapper {
 
-    @Mapping(source = "type", target = "type")
-    @Mapping(source = "name", target = "name")
-    @Mapping(source = "price", target = "price")
-    @Mapping(source = "provider", target = "provider")
     QuoteResponse toResponse(Quote quote);
 
-    @Mapping(source = "type", target = "type")
-    @Mapping(source = "name", target = "name")
-    @Mapping(source = "price", target = "price")
-    @Mapping(source = "provider", target = "provider")
     Quote toEntity(CreationQuoteRequest creationQuoteRequest);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)

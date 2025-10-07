@@ -4,6 +4,7 @@ import com.example.simpleinsurance.model.CoverageType;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Data
 public class QuoteResponse {
@@ -13,4 +14,6 @@ public class QuoteResponse {
     private CoverageTypeDto type;
     private ProviderResponse provider;
     private BigDecimal price;
+    private LocalDateTime creationDate;
+    private LocalDateTime lastModificationDate;
 }

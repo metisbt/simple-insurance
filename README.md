@@ -25,5 +25,15 @@ The API also supports retrieving the **best (lowest-priced) quote** based on ava
 - **Separation of layers**: Controller, Service, Repository, Mapper, DTO
 - **Clean, maintainable, and extensible architecture**
 
+---
 
+com.example.simpleinsurance
+┣ api
+┃ ┣ controller → REST controllers and endpoint management
+┃ ┣ dto → Data Transfer Objects for API requests/responses
+┃ ┗ mapper → MapStruct mappers for DTO ↔ Entity conversion
+┣ model → JPA entities and repositories (DAO layer)
+┣ service → Business logic and service layer implementations
+┣ exception → Custom exceptions and global exception handler
+┗ SimpleInsuranceApplication.java
 
